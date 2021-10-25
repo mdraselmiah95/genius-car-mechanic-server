@@ -23,16 +23,12 @@ async function run() {
 
     //POST API
     app.post("/services", async (req, res) => {
-      const service = {
-        name: "ENGINE DIAGNOSTIC",
-        price: "300",
-        description:
-          "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        img: "https://i.ibb.co/dGDkr4v/1.jpg",
-      };
+      const service = req.body;
+      console.log("hit the post api", service);
 
       const result = await servicesCollection.insertOne(service);
       console.log(result);
+      res.json(result);
     });
   } finally {
     // await client.close();
