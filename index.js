@@ -18,7 +18,8 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    console.log("connected to database");
+    const database = client.db("carMechanic");
+    const servicesCollection = database.collection("services");
   } finally {
     // await client.close();
   }
