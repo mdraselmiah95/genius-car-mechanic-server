@@ -68,3 +68,11 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log("Running Genius Server on Port", port);
 });
+
+/* 
+one time:
+1. heroku account open
+2. Heroku software install
+
+
+*/
